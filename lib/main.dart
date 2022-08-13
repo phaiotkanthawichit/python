@@ -28,10 +28,15 @@ class MainPageState extends State<MainPage> {
                         color: Colors.blue[900],
                       )),
                 ),
+                Icon(
+                  Icons.add_alert_outlined,
+                  size: 100,
+                  color: Colors.red,
+                )
               ],
             ),
           ],
-      ));
+        ));
   }
 }
 
