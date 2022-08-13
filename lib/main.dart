@@ -8,6 +8,13 @@ class MainPage extends StatefulWidget {
 }
 
 class MainPageState extends State<MainPage> {
+
+  var ctl_product = TextEditingController();
+  var ctl_price = TextEditingController();
+  var ctl_qty = TextEditingController();
+  var result = '------ Result --------';
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,6 +53,7 @@ class MainPageState extends State<MainPage> {
           Padding(
             padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
             child: TextField(
+              controller: ctl_product,
               decoration: InputDecoration(
                   labelText: 'สินค้า', border: OutlineInputBorder()),
             ),
@@ -54,6 +62,7 @@ class MainPageState extends State<MainPage> {
           Padding(
             padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
             child: TextField(
+              controller: ctl_qty,
               decoration: InputDecoration(
                   labelText: 'จำนวน', border: OutlineInputBorder()),
             ),
@@ -63,6 +72,7 @@ class MainPageState extends State<MainPage> {
           Padding(
             padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
             child: TextField(
+              controller: ctl_price,
               decoration: InputDecoration(
                   labelText: '@ ราคา', border: OutlineInputBorder()),
             ),
