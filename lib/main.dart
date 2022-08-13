@@ -35,14 +35,53 @@ class MainPageState extends State<MainPage> {
               )
             ],
           ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(50, 10, 10, 10),
+            child: Image.asset('images/logo.png'),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
+            child: Image.asset('images/logo.png'),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
+            child: TextField(
+              decoration: InputDecoration(
+                  labelText: 'สินค้า', border: OutlineInputBorder()),
+            ),
+          ),
+
+          Padding(
+            padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
+            child: TextField(
+              decoration: InputDecoration(
+                  labelText: 'จำนวน', border: OutlineInputBorder()),
+            ),
+          ),
+
+
+          Padding(
+            padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
+            child: TextField(
+              decoration: InputDecoration(
+                  labelText: '@ ราคา', border: OutlineInputBorder()),
+            ),
+          ),
+
         ],
       ),
+
+
+
       floatingActionButton: FloatingActionButton(
         child: Text('Click'),
         onPressed: () {
           print('Cilck print');
         },
       ),
+
+
+
     );
   }
 }
