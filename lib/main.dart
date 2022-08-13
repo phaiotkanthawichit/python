@@ -69,22 +69,33 @@ class MainPageState extends State<MainPage> {
                 decoration: InputDecoration(
                     labelText: '@ ราคา', border: OutlineInputBorder()),
               )),
+          // Padding(
+          //   padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
+          //   child:             
+          //     ElevatedButton(onPressed: () {
+          //     var v1 = int.parse(ctl_price.text);
+          //     var v2 = int.parse(ctl_qty.text);
+          //     var calculate = v1 * v2;
+          //     print("Cal: $calculate Baht");
+          //     var productname = ctl_product.text;
+          //     setState(() {
+          //       result =
+          //           "สินค้า: $productname\n ราคา: $v1\n จำนวน: $v2\nรวมทั้งหมด: $calculate บาท";
+          //     });
+          //   }),
+          // )
+
+
           Padding(
             padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
-            child: 
-            
-            ElevatedButton(onPressed: () {
-              var v1 = int.parse(ctl_price.text);
-              var v2 = int.parse(ctl_qty.text);
-              var calculate = v1 * v2;
-              print("Cal: $calculate Baht");
-              var productname = ctl_product.text;
-              setState(() {
-                result =
-                    "สินค้า: $productname\n ราคา: $v1\n จำนวน: $v2\nรวมทั้งหมด: $calculate บาท";
-              });
-            }),
-          )
+            child: Text(result,
+              style: TextStyle(fontSize: 30.0),
+            ),
+            )
+
+
+
+
         ],
       ),
       floatingActionButton: FloatingActionButton(
