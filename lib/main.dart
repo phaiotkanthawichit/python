@@ -8,12 +8,10 @@ class MainPage extends StatefulWidget {
 }
 
 class MainPageState extends State<MainPage> {
-
   var ctl_product = TextEditingController();
   var ctl_price = TextEditingController();
   var ctl_qty = TextEditingController();
   var result = '------ Result --------';
-
 
   @override
   Widget build(BuildContext context) {
@@ -51,47 +49,50 @@ class MainPageState extends State<MainPage> {
             child: Image.asset('images/logo.png'),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
-            child: TextField(
-              controller: ctl_product,
-              decoration: InputDecoration(
-                  labelText: 'สินค้า', border: OutlineInputBorder()),
-            ),
-          ),
-
+              padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
+              child: TextField(
+                controller: ctl_product,
+                decoration: InputDecoration(
+                    labelText: 'สินค้า', border: OutlineInputBorder()),
+              )),
+          Padding(
+              padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
+              child: TextField(
+                controller: ctl_qty,
+                decoration: InputDecoration(
+                    labelText: 'จำนวน', border: OutlineInputBorder()),
+              )),
+          Padding(
+              padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
+              child: TextField(
+                controller: ctl_price,
+                decoration: InputDecoration(
+                    labelText: '@ ราคา', border: OutlineInputBorder()),
+              )),
           Padding(
             padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
-            child: TextField(
-              controller: ctl_qty,
-              decoration: InputDecoration(
-                  labelText: 'จำนวน', border: OutlineInputBorder()),
-            ),
-          ),
-
-
-          Padding(
-            padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
-            child: TextField(
-              controller: ctl_price,
-              decoration: InputDecoration(
-                  labelText: '@ ราคา', border: OutlineInputBorder()),
-            ),
-          ),
-
+            child: 
+            
+            ElevatedButton(onPressed: () {
+              var v1 = int.parse(ctl_price.text);
+              var v2 = int.parse(ctl_qty.text);
+              var calculate = v1 * v2;
+              print("Cal: $calculate Baht");
+              var productname = ctl_product.text;
+              setState(() {
+                result =
+                    "สินค้า: $productname\n ราคา: $v1\n จำนวน: $v2\nรวมทั้งหมด: $calculate บาท";
+              });
+            }),
+          )
         ],
       ),
-
-
-
       floatingActionButton: FloatingActionButton(
         child: Text('Click'),
         onPressed: () {
           print('Cilck print');
         },
       ),
-
-
-
     );
   }
 }
