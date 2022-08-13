@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -13,11 +11,27 @@ class MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("My python "),
-        centerTitle: true,
-      ),
-    );
+        appBar: AppBar(
+          title: Text("My python "),
+          centerTitle: true,
+        ),
+        body: ListView(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Center(
+                  child: Text('PyThon',
+                      style: TextStyle(
+                        fontSize: 50.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue[900],
+                      )),
+                ),
+              ],
+            ),
+          ],
+      ));
   }
 }
 
