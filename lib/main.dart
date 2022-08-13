@@ -36,7 +36,16 @@ class MainPageState extends State<MainPage> {
               ],
             ),
           ],
-        ));
+        )
+        
+       floatingActionButton: FloatingActionButton(
+        child: Text('Help'),
+        onPressed: () {
+          print("Click Help");
+        },
+      ),
+    
+   );
   }
 }
 
