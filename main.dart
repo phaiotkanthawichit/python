@@ -1,0 +1,124 @@
+import 'package:flutter/material.dart';
+
+class MainPage extends StatefulWidget {
+  @override
+  State<MainPage> createState() {
+    return MainPageState();
+  }
+}
+
+class MainPageState extends State<MainPage> {
+  var ctl_product = TextEditingController();
+  var ctl_price = TextEditingController();
+  var ctl_qty = TextEditingController();
+  var result = '------ Result --------';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("My python "),
+        centerTitle: true,
+      ),
+      body: ListView(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Center(
+                child: Text('PyThon',
+                    style: TextStyle(
+                      fontSize: 50.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue[900],
+                    )),
+              ),
+              Icon(
+                Icons.add_alert_outlined,
+                size: 100,
+                color: Colors.red,
+              )
+            ],
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(50, 10, 10, 10),
+            child: Image.asset('images/logo.png'),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
+            child: Image.asset('images/logo.png'),
+          ),
+          Padding(
+              padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
+              child: TextField(
+                controller: ctl_product,
+                decoration: InputDecoration(
+                    labelText: 'สินค้า', border: OutlineInputBorder()),
+              )),
+          Padding(
+              padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
+              child: TextField(
+                controller: ctl_qty,
+                decoration: InputDecoration(
+                    labelText: 'จำนวน', border: OutlineInputBorder()),
+              )),
+          Padding(
+              padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
+              child: TextField(
+                controller: ctl_price,
+                decoration: InputDecoration(
+                    labelText: '@ ราคา', border: OutlineInputBorder()),
+              )),
+          Padding(
+            padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
+            child: ElevatedButton(
+              onPressed: () {
+                var v1 = int.parse(ctl_price.text);
+                var v2 = int.parse(ctl_qty.text);
+                var amt = v1 * v2;
+
+                print("Cal : $amt bath");
+                var Pro =ctl_product.text;
+                setState((){
+                  result = "$Pro \n ( $amt .-)";
+
+                });
+
+
+              },
+              child: Row(
+                children: [Icon(Icons.send), Text('บันทึน')],
+              ),
+            ),
+          ),
+          Padding(
+              padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
+              child: Text(
+                result,
+                style: TextStyle(fontSize: 30.0),
+              )),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Text('Click'),
+        onPressed: () {
+          print('Cilck print');
+        },
+      ),
+    );
+  }
+}
+
+class App extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "My Python",
+      home: MainPage(),
+    );
+  }
+}
+
+void main() {
+  runApp(App());
+}
